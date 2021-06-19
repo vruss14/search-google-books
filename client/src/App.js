@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
+
+import Main from "./components/Main";
+import NavBar from "./components/NavBar";
+import Jumbotron from "./components/Jumbotron";
+import SearchForm from "./components/SearchForm";
+import ResultsContainer from "./components/ResultsContainer";
+import Result from "./components/Result";
+
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
+   <Main>
+     <NavBar />
+     <Jumbotron />
+     <SearchForm />
+
+     <ResultsContainer>
+       <Result />
+       <Result />
+     </ResultsContainer>
+   </Main>
   );
 }
-
 
 export default App;
