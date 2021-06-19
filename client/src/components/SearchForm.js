@@ -9,7 +9,7 @@ function SearchForm() {
                 <input type="text" className="form-control mt-2 mb-2" id="booksearch" placeholder="Search a book here..." />
             </div>
             <div className="text-right">
-                <button type="submit" className="btn btn-primary align-right">Search</button>
+                <button type="submit" className="btn btn-primary">Search</button>
             </div>
 
         </form>

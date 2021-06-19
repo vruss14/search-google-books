@@ -2,7 +2,7 @@ import Main from "../components/Main";
 import NavBar from "../components/NavBar";
 import Jumbotron from "../components/Jumbotron";
 import ContentContainer from "../components/ContentContainer";
-import SingleBook from "../components/SingleBook";
+import SavedBook from "../components/SavedBook";
 
 function SavePage() {
     return (
@@ -12,8 +12,8 @@ function SavePage() {
   
        <ContentContainer
        containerTitle="Saved Books">
-         <SingleBook />
-         <SingleBook />
+         <SavedBook />
+         <SavedBook />
        </ContentContainer>
      </Main>
     );

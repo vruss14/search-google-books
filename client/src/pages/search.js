@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import Jumbotron from "../components/Jumbotron";
 import SearchForm from "../components/SearchForm";
 import ContentContainer from "../components/ContentContainer";
-import SingleBook from "../components/SingleBook";
+import Result from "../components/Result";
 
 function SearchPage() {
     return (
@@ -14,8 +14,8 @@ function SearchPage() {
   
        <ContentContainer
         containerTitle="Results">
-         <SingleBook />
-         <SingleBook />
+         <Result />
+         <Result />
        </ContentContainer>
      </Main>
     );
