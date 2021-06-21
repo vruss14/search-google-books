@@ -13,7 +13,7 @@ function Result(props) {
       <p>{`By: ${props.authors}`}</p>
 
       <div className="d-flex flex-lg-row flex-column">
-        <img src={`${props.image}`} className="mb-5" />
+        <img src={`${props.image}`} className="mb-5" width="128px" />
         <p className="ml-5 mr-5">{props.description}</p>
       </div>
 
