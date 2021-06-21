@@ -1,22 +1,62 @@
+import React, { useState } from "react";
 import Main from "../components/Main";
 import NavBar from "../components/NavBar";
 import Jumbotron from "../components/Jumbotron";
 import SearchForm from "../components/SearchForm";
 import ContentContainer from "../components/ContentContainer";
 import Result from "../components/Result";
+import API from "../utils/API.js";
 
 function SearchPage() {
+
+  const [formObject, setFormObject] = useState({})
+  const [books, setBooks] = useState([]);
+  
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.query) {
+      API.searchBooks({
+        query: formObject.query,
+      })
+        .then(response => setBooks(response.data.items))
+        .catch(err => console.log(err));
+    }
+  };  
+    
     return (
      <Main>
        <NavBar />
        <Jumbotron />
-       <SearchForm />
-  
-       <ContentContainer
-        containerTitle="Results">
-         <Result />
-         <Result />
-       </ContentContainer>
+       <SearchForm
+       name="BookSearch"
+       value={formObject}
+       onChange={handleInputChange}
+       onClick={handleFormSubmit}
+        />
+
+       {!books.length ? (
+              <h1 className="text-center">No Books to Display</h1>
+            ) : (
+              <ContentContainer containerTitle = "Results">
+                {books.map(book => {
+                  return (
+                    <Result
+                      key={book.id}
+                      title={book.volumeInfo.title}
+                      authors={book.volumeInfo.authors}
+                      description={book.volumeInfo.description}
+                      image={book.volumeInfo.imageLinks.thumbnail}
+                      link={book.volumeInfo.previewLink}
+                    />
+                  );
+                })}
+              </ContentContainer>
+            )}
      </Main>
     );
   }
