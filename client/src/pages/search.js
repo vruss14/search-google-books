@@ -11,6 +11,7 @@ function SearchPage() {
 
   const [formObject, setFormObject] = useState({})
   const [books, setBooks] = useState([]);
+  const [savedBooks, setSavedBooks] = useState([]);
   
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -26,7 +27,20 @@ function SearchPage() {
         .then(response => setBooks(response.data.items))
         .catch(err => console.log(err));
     }
-  };  
+  };
+  
+  function handleSave(event) {
+    event.preventDefault();
+
+    setSavedBooks([...savedBooks, event.target.value]);
+
+  }
+
+  function checkSaved() {
+    console.log(savedBooks);
+  }
+
+  checkSaved();
     
     return (
      <Main>
@@ -47,11 +61,13 @@ function SearchPage() {
                   return (
                     <Result
                       key={book.id}
+                      id={book.id}
                       title={book.volumeInfo.title}
                       authors={book.volumeInfo.authors}
                       description={book.volumeInfo.description}
                       image={book.volumeInfo.imageLinks.thumbnail}
                       link={book.volumeInfo.previewLink}
+                      save={handleSave}
                     />
                   );
                 })}
