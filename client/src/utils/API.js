@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// .env variable is returning as undefined
-
 export default {
   // Search the Google Books API
   searchBooks: function(event) {
@@ -19,6 +17,5 @@ export default {
         }
     });
   },
-
 
 };

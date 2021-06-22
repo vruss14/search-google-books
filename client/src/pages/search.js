@@ -11,7 +11,6 @@ function SearchPage() {
 
   const [formObject, setFormObject] = useState({})
   const [books, setBooks] = useState([]);
-  const [savedBooks, setSavedBooks] = useState([]);
   
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -31,12 +30,7 @@ function SearchPage() {
   
   function handleSave(event) {
     event.preventDefault();
-
     const book = JSON.parse(event.target.value);
-    console.log(book);
-
-    console.log(book.id);
-    
     let authorOutput;
 
     if(Array.isArray(book.authors)) {

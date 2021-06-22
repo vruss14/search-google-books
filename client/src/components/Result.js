@@ -5,17 +5,17 @@ function Result(props) {
   return (
     <div className="border p-3 mt-4 mb-4">
       <div className="text-right">
-      <a target="_blank" rel="noreferrer" href={props.link}><button className="btn btn-primary ml-2 mr-2">View</button></a>
-        <button onClick={(event) => props.save(event)} 
-        className="btn btn-primary ml-2 mr-2"
-        value={JSON.stringify({
-          id: props.id,
-          title: props.title,
-          authors: props.authors,
-          description: props.description,
-          image: props.image,
-          link: props.link
-        })}>Save</button>
+        <a target="_blank" rel="noreferrer" href={props.link}><button className="btn btn-primary ml-2 mr-2">View</button></a>
+          <button onClick={(event) => props.save(event)} 
+          className="btn btn-primary ml-2 mr-2"
+          value={JSON.stringify({
+            id: props.id,
+            title: props.title,
+            authors: props.authors,
+            description: props.description,
+            image: props.image,
+            link: props.link
+          })}>Save</button>
       </div>
 
       <h2>{props.title}</h2>
