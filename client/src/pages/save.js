@@ -32,8 +32,6 @@ function SavePage() {
   function deleteBookFromDatabase(event) {
     event.preventDefault();
 
-    console.log(event.target.value);
-
     API.deleteBook(event.target.value)
     .then(res => loadBooks())
     .catch(err => console.log(err));
