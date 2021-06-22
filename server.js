@@ -16,6 +16,12 @@ if (process.env.NODE_ENV === "production") {
 // API routes
 app.use("/api", apiRoutes);
 
+// Register service worker before wildcard route
+
+app.get("/service-worker.js", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
+});
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
