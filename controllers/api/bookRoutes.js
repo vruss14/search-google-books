@@ -40,6 +40,25 @@ router.post('/', async (req, res) => {
 
   }
 
-  });
+});
+
+
+router.delete('/:id', async (req, res) => {
+  // Delete a book by ID
+
+  try {
+  const bookToDelete = await Book.findById(req.params.id).then(book => book.remove());
+
+  res.status(200).json([{ message: 'The book was successfully removed!' }]);
+  console.log('\n', "The book was successfully removed!", '\n');
+
+} catch (err) {
+  res.status(500).json(err);
+  console.log(err);
+
+}
+
+});
+
 
 module.exports = router;

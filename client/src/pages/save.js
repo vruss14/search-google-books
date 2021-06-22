@@ -11,21 +11,31 @@ function SavePage() {
 
   const [savedBooks, setSavedBooks] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { loadBooks() }, []);
 
+  function loadBooks() {
     API.getBooks()
       .then(res => {
         if (res.data.length === 0) {
-          throw console.log("No results found.");
+          console.log("No results found.");
         }
         if (res.data.status === "error") {
           throw console.log(res.data.message);
         }
         setSavedBooks(res.data);
-        return;
       })
       .catch(err => console.log(err));
-  }, []);
+  };
+
+  function deleteBookFromDatabase(event) {
+    event.preventDefault();
+
+    console.log(event.target.value);
+
+    API.deleteBook(event.target.value)
+    .then(res => loadBooks())
+    .catch(err => console.log(err));
+  }
 
     return (
      <Main>
@@ -39,13 +49,14 @@ function SavePage() {
            {savedBooks.map(book => {
              return (
                <SavedBook
-                 key={book.id}
-                 id={book.id}
+                 key={book.title}
+                 id={book._id}
                  title={book.title}
                  authors={book.authors}
                  description={book.description}
                  image={book.image}
                  link={book.link}
+                 deleteBookFromDatabase={deleteBookFromDatabase}
                />
              );
            })}

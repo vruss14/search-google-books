@@ -18,4 +18,8 @@ export default {
     });
   },
 
+  deleteBook: function(id) {
+    return axios.delete("/api/books/" + id);
+  },
+
 };

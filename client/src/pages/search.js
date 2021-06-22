@@ -30,6 +30,7 @@ function SearchPage() {
   
   function handleSave(event) {
     event.preventDefault();
+    console.log(event.target.value);
     const book = JSON.parse(event.target.value);
     let authorOutput;
 
