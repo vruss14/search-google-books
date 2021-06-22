@@ -18,7 +18,7 @@ app.use("/api", apiRoutes);
 
 // Register service worker before wildcard route
 
-app.get("/registerServiceWorker.js", (req, res) => {
+app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
 });
 

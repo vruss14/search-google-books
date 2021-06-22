@@ -1,5 +1,12 @@
 import axios from "axios";
 
+// API functions:
+
+// Search the API
+// Get books that are stored in the database and display them on the saved page
+// Save books to the database
+// Delete books from the saved page/database
+
 export default {
   // Search the Google Books API
   searchBooks: function(event) {

@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import API from "../utils/API.js";
+import React from "react";
+
+// The saved books are rendered from the database
+// Deleting a book from the database will immediately remove it from the page
 
 function SavedBook(props) {
-
-  // function deleteBookFromDatabase(event) {
-  //   event.preventDefault();
-
-  //   console.log(event.target.value);
-
-  //   API.deleteBook(event.target.value)
-  //   .catch(err => console.log(err));
-  // }
 
   return (
     <div className="border p-3 mt-4 mb-4">

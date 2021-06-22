@@ -6,6 +6,8 @@ import ContentContainer from "../components/ContentContainer";
 import SavedBook from "../components/SavedBook";
 import API from "../utils/API.js";
 
+// The Save page loads the books from the database initially through the useEffect Hook
+// When books are deleted, the list of books is reloaded
 
 function SavePage() {
 

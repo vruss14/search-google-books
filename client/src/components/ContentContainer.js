@@ -1,5 +1,7 @@
 import React from "react";
 
+// The container that holds the results from searching the API
+
 function ResultsContainer(props) {
   return (
       <div className = "m-5 border p-5">

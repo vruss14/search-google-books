@@ -7,15 +7,22 @@ import ContentContainer from "../components/ContentContainer";
 import Result from "../components/Result";
 import API from "../utils/API.js";
 
+
+// The Search Page handles all user queries 
+
 function SearchPage() {
 
   const [formObject, setFormObject] = useState({})
   const [books, setBooks] = useState([]);
   
+  // Any time the query field changes, the formObject gets updated with that value
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value})
   };
+
+  // Submitting the form with a valid query runs the axios function to get data from the API
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -27,6 +34,9 @@ function SearchPage() {
         .catch(err => console.log(err));
     }
   };
+  
+  // This function reads the data from the result that the user clicked the save button on and posts it to the database
+  // Handling for multiple authors (so that the database can always expect a string)
   
   function handleSave(event) {
     event.preventDefault();

@@ -1,5 +1,7 @@
 import React from "react";
 
+// This is where users can type in their searchs, and their queries are used when calling the API
+
 function SearchForm(props) {
 
     return (
@@ -10,7 +12,7 @@ function SearchForm(props) {
                 <input onChange={props.onChange} name = "query" type="text" className="form-control mt-2 mb-2" id="booksearch" placeholder="Search a book here..." />
             </div>
             <div className="text-right">
-                <button onClick={props.onClick} type="submit" className="btn btn-primary">Search</button>
+                <button onClick={props.onClick} type="submit" className="btn btn-success">Search</button>
             </div>
 
         </form>
