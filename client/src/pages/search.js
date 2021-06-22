@@ -32,15 +32,29 @@ function SearchPage() {
   function handleSave(event) {
     event.preventDefault();
 
-    setSavedBooks([...savedBooks, event.target.value]);
+    const book = JSON.parse(event.target.value);
+    console.log(book);
 
+    console.log(book.id);
+    
+    let authorOutput;
+
+    if(Array.isArray(book.authors)) {
+      const authorString = book.authors.join(' and ');
+      authorOutput = `By: ${authorString}`
+    } else {
+      authorOutput = `By: ${book.authors}`;
+    }
+
+    API.saveBook({
+      id: book.id,
+      title: book.title,
+      authors: authorOutput,
+      description: book.description,
+      image: book.image,
+      link: book.link
+    }).catch((err) => console.log(err));
   }
-
-  function checkSaved() {
-    console.log(savedBooks);
-  }
-
-  checkSaved();
     
     return (
      <Main>
