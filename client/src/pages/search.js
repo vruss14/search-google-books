@@ -40,7 +40,6 @@ function SearchPage() {
   
   function handleSave(event) {
     event.preventDefault();
-    console.log(event.target.value);
     const book = JSON.parse(event.target.value);
     let authorOutput;
 
@@ -82,9 +81,9 @@ function SearchPage() {
                       key={book.id}
                       id={book.id}
                       title={book.volumeInfo.title}
-                      authors={book.volumeInfo.authors}
+                      authors={book.volumeInfo.authors === undefined ? "" : book.volumeInfo.authors}
                       description={book.volumeInfo.description}
-                      image={book.volumeInfo.imageLinks.thumbnail}
+                      image={book.volumeInfo.imageLinks === undefined ? "" : book.volumeInfo.imageLinks.thumbnail}
                       link={book.volumeInfo.previewLink}
                       save={handleSave}
                     />
