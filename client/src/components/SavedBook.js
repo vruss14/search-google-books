@@ -15,7 +15,7 @@ function SavedBook(props) {
       </div>
 
       <h2>{props.title}</h2>
-      <p>{props.authors}</p>
+      <p>{props.authors === "By: " ? "No authors to show." : props.authors}</p>
 
       <div className="d-flex flex-lg-row flex-column">
         <img src={`${props.image}`} className="mb-5" width="128px" />
