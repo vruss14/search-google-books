@@ -6,7 +6,8 @@ function SearchForm(props) {
 
     const style = {
         marginTop: "15%",
-        marginBottom: "15%"
+        marginBottom: "15%",
+        border: "1px dotted gray"
     }
 
     return (

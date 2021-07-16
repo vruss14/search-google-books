@@ -41,8 +41,8 @@ function SavePage() {
 
        {!savedBooks.length ? (
          <section>
-          <h1 className="has-text-centered mt-5 mb-3 has-text-weight-bold is-size-2">You haven't saved any books yet!</h1>
-          <p className="subtitle is-size-3 has-text-centered">
+          <h1 className="has-text-centered mt-5 ml-4 mr-4 mb-3 has-text-weight-bold is-size-2">You haven't saved any books yet!</h1>
+          <p className="subtitle is-size-3 has-text-centered ml-4 mr-4">
           📖 Search for books you're interested in on the Search page. 📖
           </p>
          </section>

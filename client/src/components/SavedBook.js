@@ -30,8 +30,8 @@ function SavedBook(props) {
 
       <div className="column is-two-thirds has-text-centered">
         <h2 className="is-size-4">{props.title}</h2>
-        <p>{props.authors === "By: " ? "No authors to show." : props.authors}</p>
-        <p className="ml-5 mr-5 has-text-left">{props.description}</p>
+        <p className="is-size-5">{props.authors === "By: " ? "No authors to show." : props.authors}</p>
+        <p className="ml-5 mr-5 mt-2 has-text-left">{props.description}</p>
       </div>
     </div>
   </div>
