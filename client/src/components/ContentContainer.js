@@ -4,10 +4,10 @@ import React from "react";
 
 function ResultsContainer(props) {
   return (
-      <div className = "m-5 border p-5">
-          <h1 className="mb-5">{props.containerTitle}</h1>
+      <div className = "container">
+          <h1 className="mb-5 has-text-centered is-size-1 has-text-weight-bold">{props.containerTitle}</h1>
           {props.children}
-        </div>
+      </div>
 
   );
 }

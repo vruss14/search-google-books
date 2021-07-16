@@ -4,12 +4,16 @@ import React from "react";
 
 function Jumbotron() {
     return (
-        <div className="jumbotron jumbotron-fluid mt-5 mb-5 text-center bg-success text-white">
-            <div className="container">
-                <h1 className="display-4">(React) Google Books Search</h1>
-                <p className="lead">Search for and save books of interest.</p>
+        <section className="hero is-link mt-6 mb-5 has-text-centered">
+            <div className="hero-body">
+                <p className="title is-size-1 mb-5">
+                (React) Google Books Search
+                </p>
+                <p className="subtitle is-size-3">
+                Search for and save books of interest.
+                </p>
             </div>
-        </div>
+        </section>
     )
 }
 
