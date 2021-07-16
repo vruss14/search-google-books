@@ -18,9 +18,6 @@ function SavePage() {
   function loadBooks() {
     API.getBooks()
       .then(res => {
-        if (res.data.length === 0) {
-          console.log("No results found.");
-        }
         if (res.data.status === "error") {
           throw console.log(res.data.message);
         }
@@ -43,7 +40,12 @@ function SavePage() {
        <Jumbotron />
 
        {!savedBooks.length ? (
-         <h1 className="text-center">No Saved Books to Display</h1>
+         <section>
+          <h1 className="has-text-centered mt-5 mb-3 has-text-weight-bold is-size-2">You haven't saved any books yet!</h1>
+          <p className="subtitle is-size-3 has-text-centered">
+          📖 Search for books you're interested in on the Search page. 📖
+          </p>
+         </section>
        ) : (
          <ContentContainer containerTitle = "Saved Books">
            {savedBooks.map(book => {
