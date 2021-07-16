@@ -25,7 +25,10 @@ function App() {
           <Footer />
         </Route>
 
-        <Route component={PageNotFound}></Route>
+        <Route>
+          <PageNotFound />
+          <Footer />
+        </Route>
 
       </Switch>
 

@@ -40,6 +40,8 @@ function SearchPage() {
 
         })
         .catch(err => console.log(err));
+    } else {
+      setNotification(true);
     }
   };
 
@@ -125,9 +127,9 @@ function SearchPage() {
             ) : null}
 
       {notification ? (
-        <div className="notification is-danger has-text-centered">
+        <div className="notification is-danger has-text-centered is-size-3">
           <button onClick={() => removeNotification()} id="remove-notification" className="delete"></button>
-          No books found. Please try again.
+          No books found. 🤦‍♀️ Please try again.
         </div> ) : null }
      </Main>
     );
