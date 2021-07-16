@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import SearchPage from "./pages/search.js";
 import SavePage from "./pages/save.js";
+import PageNotFound from "./pages/404.js"
 import Footer from "./components/Footer";
 
 // This is an SPA application with two views
@@ -23,6 +24,8 @@ function App() {
           <SavePage />
           <Footer />
         </Route>
+
+        <Route component={PageNotFound}></Route>
 
       </Switch>
 

@@ -7,7 +7,7 @@ function SearchForm(props) {
     const style = {
         marginTop: "15%",
         marginBottom: "15%",
-        border: "1px dotted gray"
+        border: "1px solid gray"
     }
 
     return (
@@ -26,7 +26,8 @@ function SearchForm(props) {
                     </div>
 
                     <div className="control">
-                        <button onClick={props.onClick} type="submit" className="button is-link is-size-5 mb-5">Submit</button>
+                        <button onClick={props.onClick} type="submit" id="submit-form" 
+                        className="button is-link is-size-5 mb-5">Submit</button>
                     </div>
                 </form>
             </div>
