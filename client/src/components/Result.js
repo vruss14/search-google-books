@@ -4,28 +4,46 @@ import React from "react";
 
 function Result(props) {
 
-  // Custom styling for images to prevent excess stretching
+  // Checks if there is an image associated with the book then returns the image if true
 
-  function checkAuthors() {
-    if(props.authors) {
-      return <p>{`By: ${props.authors}`}</p>
+  function checkImg() {
+    if(props.image) {
+      return (
+        <figure>
+          <img className="mb-5" src={props.image} width="50%" height="50%" alt="Book cover" />
+          <br />
+        </figure>
+      ) 
     }
-    return null
+    return null;
   }
 
-  const imgStyle = {
-    maxWidth: "50%",
-    maxHeight: "50%"
+  // Checks 3 cases: multiple authors, single author, and no authors so that the correct information displays
+  
+  function checkAuthors() {
+
+    if(props.authors) {
+
+      if(props.authors.length > 1) {
+        const joinedArr = props.authors.join(" and ");
+        return <p className="mb-3 is-size-5">{`By: ${joinedArr}`}</p>
+      }
+      return <p className="mb-3 is-size-5">{`By: ${props.authors}`}</p>
+    }
+    return null
   }
 
   // The Save button stringifys the props for that specific result and saves them to the database
 
   return (
-    <div className="border p-3 mt-4 mb-4">
-      <div className="text-right">
-        <a target="_blank" rel="noreferrer" href={props.link}><button className="btn btn-primary ml-2 mr-2 mb-2">View</button></a>
-          <button onClick={(event) => props.save(event)} 
-          className="btn btn-success ml-2 mr-2 mb-2"
+    <div className="box p-6">
+      <div className="columns is-desktop is-vcentered">
+        <div className="column is-third has-text-centered">
+          {checkImg()}          
+          <a target="_blank" rel="noreferrer" href={props.link}><button className="button is-primary is-size-5 ml-2 mr-2">View</button></a>
+          <button 
+          onClick={(event) => props.save(event)} 
+          className="button is-link is-size-5 ml-2 mr-2"
           value={JSON.stringify({
             id: props.id,
             title: props.title,
@@ -33,21 +51,19 @@ function Result(props) {
             description: props.description,
             image: props.image,
             link: props.link
-          })}>Save</button>
+          })
+        }>Save</button>
+        </div>
+
+        <div className="column is-two-thirds has-text-centered">
+          <h2 className="is-size-4">{props.title}</h2>
+          {checkAuthors()}
+          <p className="ml-5 mr-5 has-text-left">{props.description}</p>
+        </div>
       </div>
-
-      <h2>{props.title}</h2>
-      {checkAuthors()}
-      {/* <p>{`By: ${props.authors}`}</p> */}
-
-      <div className="d-flex flex-lg-row flex-column">
-        <img src={`${props.image}`} className="mb-5" style={imgStyle} />
-        <p className="ml-5 mr-5">{props.description}</p>
-      </div>
-
     </div>
+);
 
-  );
 }
 
 export default Result;

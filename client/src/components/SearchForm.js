@@ -4,18 +4,34 @@ import React from "react";
 
 function SearchForm(props) {
 
-    return (
-        <form className="m-5 border p-3">
-            <h4 className="mb-1">Book Search</h4>
-            <div className="form-group">
-                <label className="mt-2 mb-2">Book</label>
-                <input onChange={props.onChange} name = "query" type="text" className="form-control mt-2 mb-2" id="booksearch" placeholder="Search a book here..." />
-            </div>
-            <div className="text-right">
-                <button onClick={props.onClick} type="submit" className="btn btn-success">Search</button>
-            </div>
+    const style = {
+        marginTop: "15%",
+        marginBottom: "15%"
+    }
 
-        </form>
+    return (
+
+        <div className="columns is-desktop is-centered">
+            <div className="column is-half">
+                <div className="box" style={style}>
+                <form className = "pl-5 pr-5">
+                    <div className="field">
+                        <label className="label mb-5 is-size-4">Search the Google Books API</label>
+                        <div className="control">
+                            <input onChange={props.onChange} name="query" 
+                            className="input mb-5" type="text" id="booksearch" 
+                            placeholder="Enter a book title, author, or topic..." />
+                        </div>
+                    </div>
+
+                    <div className="control">
+                        <button onClick={props.onClick} type="submit" className="button is-link is-size-5 mb-5">Submit</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
     )
 }
 

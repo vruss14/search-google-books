@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
   
       res.status(200).json(bookData);
       console.log('\n', "All books have been successfully retrieved!", '\n')
-      console.log(bookData);
 
     } catch (err) {
       res.status(500).json(err);
@@ -32,7 +31,6 @@ router.post('/', async (req, res) => {
 
     res.status(200).json([{ message: 'The book was successfully saved!' }, newBook]);
     console.log('\n', "The book was successfully saved!", '\n');
-    console.log(newBook);
 
   } catch (err) {
     res.status(500).json(err);
