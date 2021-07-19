@@ -8,6 +8,8 @@ This full-stack application allows users to search for books from the Google Boo
 
 It was challenging to create this application because it was my first real attempt at building and deploying an app using the entire MERN stack. The most challenging aspect of building this application was understanding when and how to use strategies specific to React. I learned a lot about the useEffect hook, and recognized the importance of adding an empty array at the end (to avoid an infinite loop). I also became a lot more familiar and comfortable with the useState hook. One of my favorite things I learned in building this application was recognizing how all technologies in the MERN stack work together. It was really interesting to see the patterns of data being passed from the React front-end to the Express back-end and ultimately to the Mongo database.
 
+I initially built the application using Bootstrap, then switched to Bulma for some additional practice in a CSS framework that I'm not as familiar with. It was a unique and empowering experience for me to successfully convert all the React components in the application to use Bulma class names and features.
+
 A few ideas for future development include:
 
 - Adding additional custom styling to the app
@@ -20,6 +22,7 @@ A few ideas for future development include:
 - Express.js
 - React
 - Node.js
+- Bulma
 
 ## Table of Contents
 
@@ -38,11 +41,16 @@ Alternatively, the application can be cloned and run locally. The front-end runs
 
 A view of the Search page:
 
-![Search Page](./client/public/images/google-books-search.png)
+![Search Page](./client/public/images/search-books.png)
+
+A view of results from a search:
+
+![Results](./client/public/images/search-books-results.png)
+
 
 A view of the Saved page:
 
-![Saved Page](./client/public/images/google-books-saved.png)
+![Saved Page](./client/public/images/saved-google-books.png)
 
 ## Usage
 
